@@ -1,11 +1,14 @@
 import './App.css'
+import FlashCard from './components/Flashcard'
+import Intro from './components/Intro'
 
 function App() {
 
   return (
-    <div className="App">
-      <p>All set</p>
-    </div>
+    <>
+      <Intro />
+      <FlashCard question="how many ways you can define variable in JS" answer="3"/>
+    </>
   )
 }
 
