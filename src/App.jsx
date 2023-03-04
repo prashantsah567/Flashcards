@@ -5,10 +5,10 @@ import Intro from './components/Intro'
 function App() {
 
   return (
-    <>
+    <div className='app'>
       <Intro />
-      <FlashCard question="how many ways you can define variable in JS" answer="3"/>
-    </>
+      <FlashCard />
+    </div>
   )
 }
 

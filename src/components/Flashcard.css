@@ -1,15 +1,18 @@
 .flashcard{
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 70%;
+    height: 350px;
     perspective: 1000px;
-    transition: transform 0.6s;
+    transition: transform 0.3s;
     transform-style: preserve-3d;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: coral;
+    align-items: center;
+    justify-content: center;
 }
 
 .flipped{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
 .front,
@@ -23,7 +26,7 @@
 }
 
 .back{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
 
 .content{
