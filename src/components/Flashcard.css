@@ -2,15 +2,16 @@
     position: relative;
     width: 70%;
     height: 350px;
-    perspective: 1000px;
     transition: transform 0.3s;
     transform-style: preserve-3d;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     background-color: coral;
+}
+.mainCard{
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .flipped{
     transform: rotateX(180deg);
 }
@@ -41,8 +42,7 @@
 
 .btn{
     margin-top: 20px;
-    font-size: larger;
-    color: blue;
     align-items: center;
     justify-content: center;
+    display: flex;
 }

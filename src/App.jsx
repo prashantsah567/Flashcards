@@ -1,4 +1,3 @@
-import './App.css'
 import FlashCard from './components/Flashcard'
 import Intro from './components/Intro'
 

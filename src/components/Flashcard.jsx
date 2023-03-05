@@ -27,20 +27,22 @@ const FlashCard = () => {
         setCurrentCardIndex((currentCardIndex+1)%flashcardsData.length);
     }
     return(
-        <>
-        <div className={`flashcard ${isFlipped ? "flipped":""}`} onClick={handleClick}>
-            <div className="front">
-                <div className="content">{currentFlashcard.question}</div>
-            </div>
-            <div className="back">
-                <div className="content">{currentFlashcard.answer}</div>
-            </div>
-        </div>
-        <br/>
         <div>
-        <button onClick={handleForwardClick} className="btn">→</button>
+            <div className="mainCard">
+                <div className={`flashcard ${isFlipped ? "flipped":""}`} onClick={handleClick}>
+                    <div className="front">
+                        <div className="content">{currentFlashcard.question}</div>
+                    </div>
+                    <div className="back">
+                        <div className="content">{currentFlashcard.answer}</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div className="btn">
+                <button onClick={handleForwardClick}>→</button>
+            </div>
         </div>
-        </>
     )
 }
 
