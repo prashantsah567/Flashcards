@@ -38,3 +38,11 @@
     font-size: 1.5rem;
     text-align: center;
 }
+
+.btn{
+    margin-top: 20px;
+    font-size: larger;
+    color: blue;
+    align-items: center;
+    justify-content: center;
+}
