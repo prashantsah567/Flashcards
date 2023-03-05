@@ -4,7 +4,7 @@ import Intro from './components/Intro'
 function App() {
 
   return (
-    <div className='app'>
+    <div>
       <Intro />
       <FlashCard />
     </div>

@@ -16,8 +16,11 @@ const flashcardsData = [
 
 const FlashCard = () => {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [backgroundColor, setBackgroundColor] = useState('#ed7d45');
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const currentFlashcard = flashcardsData[currentCardIndex];
+
+    const colors = ['#42b6f5', '#7542f5', '#f5429e', '#ffff00', '#e8cd54'];
 
     const handleClick = () =>{
         setIsFlipped(!isFlipped);
@@ -25,11 +28,15 @@ const FlashCard = () => {
 
     const handleForwardClick = () =>{
         setCurrentCardIndex((currentCardIndex+1)%flashcardsData.length);
+        setIsFlipped(false);
+        //to change the background color of the flashcard
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        setBackgroundColor(randomColor);
     }
     return(
         <div>
             <div className="mainCard">
-                <div className={`flashcard ${isFlipped ? "flipped":""}`} onClick={handleClick}>
+                <div style={{backgroundColor: backgroundColor}} className={`flashcard ${isFlipped ? "flipped":""}`} onClick={handleClick}>
                     <div className="front">
                         <div className="content">{currentFlashcard.question}</div>
                     </div>
