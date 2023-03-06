@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-![Alt text](../project-2.gif)
+![gif walkthrough of flashcard](src/assets/project-2.gif)
 
 ## Notes
 
