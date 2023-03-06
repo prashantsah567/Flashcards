@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import "./FlashCard.css";
+import codeSnippet from '../assets/codeSnippet.png';
 
 const flashcardsData = [
     {question: "What does DOM stands for?", answer: "Document Object Model"},
     {question: "What is a closure?", answer: "It's an inner function that has access to the outer function's variables and parameters"},
-    {question: "What does JSX stands for?", answer: "JavaScript Syntax Extension"},
+    {question: "What will be logged to the console when this code is run?", answer: "[2, 4, 6, 8, 10]", image: "codeSnippet.png"},
     {question: "What is the virtual DOM in React?", answer: "It's a lightweight representation of the actual DOM used by React for performance optimization"},
     {question: "What is purpose of the 'useEffect' hook in React?", answer: "It is used to perform side effects in a React functional component, such as fetching data or updating the DOM"},
     {question: "What is the difference between 'let' and 'const' in JS?", answer: "'Let' declares a variable that can be reassigned, while 'const' declares a variable that cannot be reassigned"},
@@ -19,11 +20,13 @@ const FlashCard = () => {
     const [backgroundColor, setBackgroundColor] = useState('#ed7d45');
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const currentFlashcard = flashcardsData[currentCardIndex];
+    const [imageOnCard, setImageOnCard] = useState(true);
 
     const colors = ['#42b6f5', '#7542f5', '#f5429e', '#ffff00', '#e8cd54'];
 
     const handleClick = () =>{
         setIsFlipped(!isFlipped);
+        setImageOnCard(!imageOnCard);
     }
 
     const handleForwardClick = () =>{
@@ -32,6 +35,7 @@ const FlashCard = () => {
         //to change the background color of the flashcard
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         setBackgroundColor(randomColor);
+        setImageOnCard(true);
     }
     return(
         <div>
@@ -42,6 +46,9 @@ const FlashCard = () => {
                     </div>
                     <div className="back">
                         <div className="content">{currentFlashcard.answer}</div>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', margin: '5px' }}>
+                        {(currentFlashcard.image && imageOnCard) ? ( <img src={codeSnippet} alt="could not load" width="300" height="150" /> ) : ''}
                     </div>
                 </div>
             </div>
